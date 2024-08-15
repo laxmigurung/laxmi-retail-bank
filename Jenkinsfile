@@ -18,6 +18,14 @@ pipeline {
                 ./system_resources_test.sh
                 '''
             }
-        }
+       }
+       stage ('Deploy') {
+           steps {
+               sh '''#!/bin/bash
+               source venv/bin/activate
+               eb create laxmi-retail-bank --single
+               '''
+           }
+       }
     }
 }
