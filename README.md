@@ -10,6 +10,7 @@ An access key grants programmatic access  or CLI-based access to AWS APIs to you
 In my EC2 instance, I install required jenkins configurations and start it. Once the jenkins is actively running in our server, I can login to jenkins using my public-ipaddress:<jenkins-port>. As this was new instance where I needed to set the inbound rules for incoming traffic coming from jenkins. 
 In the jenkins, I created a mutibranch pipeline and connected it with GitHub repo for the project. Multibranch can be very useful when your repo has multiple branches (in the case where 3-4 developers are contributing to the same repo), this pipeline builds and creates as many new jobs as there exists JekinFiles in each branch.
 
+
 As the project builds in Jenkins, I installed AWS CLI in my EC2 with the following commands.
 $curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 $unzip awscliv2.zip
@@ -34,5 +35,6 @@ With all the configuration in place with Jenkins, AWS CLI, updated code, AWS EB 
 The system_resources_test.sh script we added in the source code also runs in the backgroud and check the CPU usage, memory consumption, disk usage. This runs during test stage in Jenkins.
 
 <img width="1512" alt="Screenshot 2024-08-15 at 12 18 15 AM" src="https://github.com/user-attachments/assets/ee947bfc-94d4-4657-97bd-7182ed654fb6">
-<img width="998" alt="Screenshot 2024-08-15 at 11 53 19 PM" src="https://github.com/user-attachments/assets/21e3d7f7-88b6-4190-9a31-8dd5e3cc773a">
 
+System Design Diagram
+<img width="956" alt="Screenshot 2024-08-19 at 10 52 08 PM" src="https://github.com/user-attachments/assets/2ad5c770-fc0a-4e6e-92e6-2572db8b2946">
